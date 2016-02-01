@@ -1,0 +1,13 @@
+#! /usr/bin/rio --one-mouth
+
+bash
+    sed -e 's/^\([^\t]\+\)\t\([^\t]\+\)\tGET \(\/[a-z0-9_]\+\) HTTP\/1.1$/\2\3/g' -e 's/^\([^\t]\+\)\t\([^\t]\+\)\tGET \/ HTTP\/1.1$/\1/g'
+        paste --serial
+            getoption --home
+            echo
+            getoption --apps
+            echo
+            head -n 1
+                read
+        cat
+    cat
