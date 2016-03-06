@@ -1,4 +1,4 @@
-# Tiva-web 1
+# Tiva-web 2
 
 Web server for tiva apps.
 
@@ -10,5 +10,6 @@ Run install script as root.
 
 ## Use
 
-Any script with executable permission on /srv/tiva/apps directory is treated
-as a cgi script.
+The server checks directory /srv/tiva/static looking for static files. If
+there is not static file with searched path, the server checks directory
+/srv/tiva/apps looking for cgi scripts.
