@@ -1,3 +1,4 @@
 #! /bin/bash
 
-tcpserver -DHPR -l 0 0.0.0.0 80 cgiserver --dir /srv/tiva/apps --check-static /srv/tiva/static
+tivaweb_uid=`cat /etc/passwd | grep '^tivaweb' | cut -d: -f3`
+tcpserver -DHPR -l 0 -u $tivaweb_uid 0.0.0.0 80 cgiserver --dir /srv/tiva/apps --check-static /srv/tiva/static
